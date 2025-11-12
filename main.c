@@ -95,21 +95,28 @@ int WINAPI WinMain(HINSTANCE hInstance,
             };
 
             glPushMatrix();
-            glRotatef(theta, .0f, .0f, 0.0f);
+            glRotatef(theta, 1.0f, 1.0f, 0.0f);
 
             form_indices(m, 1);
-            glTranslatef(0.55,0,0);
+            glTranslatef(-1, 0, 0);
+
             form_indices(m, 1);
-            glTranslatef(-0.55,0,0);
-            glTranslatef(-0.55,0,0);
+            glTranslatef(0.5, 0, 0);
+
             form_indices(m, 1);
-            glTranslatef(0.55,0,0);
+            glTranslatef(0.5, 0, 0);
+
+            glTranslatef(0.5, 0, 0);
+            form_indices(m, 1);
+
+            glTranslatef(0.5, 0, 0);
+            form_indices(m, 1);
 
             glPopMatrix();
 
             SwapBuffers(hDC);
 
-            theta += .0f;
+            theta += 1.0f;
             Sleep (1);
         }
     }
