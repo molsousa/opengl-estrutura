@@ -1,9 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <GL/gl.h>
 #include "../include/lista.h"
 
 struct lista{
-    int info;
+    Reg info;
     struct lista* prox;
 };
 
@@ -21,10 +22,13 @@ void liberar_lista(Lista l)
     free(l);
 }
 
-Lista insere(Lista l, int info)
+Lista insere(Lista l, Reg info)
 {
     if(l == NULL){
         Lista aux = malloc(sizeof(struct lista));
+
+        glTranslatef(info.valor_translacao, 0, 0);
+
         aux->info = info;
         aux->prox = NULL;
 
